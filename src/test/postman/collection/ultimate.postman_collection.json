@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "efb2e771-ded9-4e84-8b5b-35cc601ef6b1",
+		"name": "ultimate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9db28a2e-5328-4584-a60a-3abdad680249",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/v1/books",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"v1",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get book by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8cf12c89-8838-485b-a24a-8bde0134cb51",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/v1/books/{{bookId}}",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"v1",
+						"books",
+						"{{bookId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all books onloan",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ed7a0ab-c955-4ecd-8467-78ee12bfa484",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/v1/books/onloan",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"v1",
+						"books",
+						"onloan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all books overdue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b6ba8c8-6fdb-4af9-babf-848823ebd65c",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{host}}:{{port}}/v1/books/overdue",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"v1",
+						"books",
+						"overdue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rent a book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "57b5d486-1e5b-4f53-a98e-aaae15cdec5a",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 201;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cardHoldId\": {{cardHoldId}},\n\t\"bookId\": {{bookId}}\n}"
+				},
+				"url": {
+					"raw": "http://{{host}}:{{port}}/v1/rental",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"v1",
+						"rental"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book return",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5b365236-be60-4b37-85af-ce814f57e1ed",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/v1/rental/{{bookId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"v1",
+						"rental",
+						"{{bookId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

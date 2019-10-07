@@ -1,0 +1,11 @@
+version: 1.0
+configuration:
+  has_webserver: true
+  ide_config:
+    default_open_files:
+      - readme.md
+      - HELP.md
+    project_menu:
+      run: "cd library-api; mvn clean spring-boot:run"
+      install: "cd library-api; mvn clean install"
+      test: "cd library-api; mvn clean test"
