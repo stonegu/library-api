@@ -1,0 +1,35 @@
+type BookDto {
+	id:Long
+	title:String
+	ISBN:String
+	author:String
+}
+
+type CardHolderDto {
+	id: Long
+	lastName:String
+	firstName:String
+	cardNumber:String
+}
+
+type RentalDto {
+	id:Long
+	cardHolder:CardHolderDto
+	book:BookDto
+	dueDate:String
+}
+
+input RentalRequest {
+	cardHoldId:Long
+	bookId:Long
+}
+
+type Query {
+	books:[BookDto]
+	book(id:Long):BookDto
+}
+
+type Mutation {
+	rentbook(request:RentalRequest!):RentalDto
+	bookReturn(bookId:Long):[RentalDto]
+}

@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "efb2e771-ded9-4e84-8b5b-35cc601ef6b1",
-		"name": "ultimate",
+		"_postman_id": "6bdce978-9fe4-4f14-98c7-a5c760770b65",
+		"name": "Rest-GraphQL-Demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -212,5 +212,6 @@
 			},
 			"response": []
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
