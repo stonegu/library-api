@@ -11,3 +11,5 @@ design decisions that you made, additional libraries added or anything that you 
 
 H2:
 db url: jdbc:h2:mem:testdb for http://localhost:8000/h2-console
+
+GraphQL: http://localhost:8000/graphiql
